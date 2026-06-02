@@ -65,4 +65,19 @@ public class TaskService {
         }
         return dtos;
     }
+
+    public TaskResponseDTO update(Long id, TaskRequestDTO dto) {
+        Task task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException(id));
+        task.setDataLimite(dto.getDataLimite());
+        task.setDescricao(dto.getDescricao());
+        task.setStatus(dto.getStatus());
+        task.setTitulo(dto.getTitulo());
+        task = taskRepository.save(task);
+        return taskMapper.toDTO(task);
+    }
+
+    public void deleteById(Long id) {
+        Task task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException(id));
+        taskRepository.delete(task);
+    }
 }
