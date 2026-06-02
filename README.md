@@ -222,7 +222,7 @@ Cobertura dos principais fluxos:
 ### Clonar o projeto
 
 ```bash
-git clone https://github.com/SEU-USUARIO/todo-app.git
+git clone https://github.com/bieldb/todo-app.git
 ```
 
 ### Configurar banco MySQL
@@ -237,7 +237,7 @@ CREATE DATABASE todoapp;
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/todoapp
-spring.datasource.username=root
+spring.datasource.username=seu_user
 spring.datasource.password=sua_senha
 
 spring.jpa.hibernate.ddl-auto=update
